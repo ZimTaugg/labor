@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js project to Azure Function App - timfunction
+name: Build and deploy Node.js project to Azure Function App - timFunction
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
 
 env:
   AZURE_FUNCTIONAPP_PACKAGE_PATH: '.' # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '22' # set this to the node version to use (supports 8.x, 10.x, 12.x)
+  NODE_VERSION: '22.x' # set this to the node version to use (supports 8.x, 10.x, 12.x)
 
 jobs:
   build:
@@ -65,15 +65,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1A502FD1F0944B48A4D6ECC368AB90E9 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CED8EED25A544C52BBE2FB22910755FB }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_75150B10170141459BC9737081E74989 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_9A6FCE9EB7C547A69352FBEB751858F7 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_DB533C36AF0542F9BBEE57FFE312DC2F }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_0EB2543680D7435896F93CE3166E65C4 }}
 
       - name: 'Run Azure Functions Action'
         uses: Azure/functions-action@v1
         id: fa
         with:
-          app-name: 'timfunction'
+          app-name: 'timFunction'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           
