@@ -1,12 +1,12 @@
 const { app,input } = require('@azure/functions');
 
 const cosmosInput = input.cosmosDB({
-    databaseName: 'DemoDatabase',
+    databaseName: 'timDB',
     containerName: 'Items',
     connection: 'CosmosDB',
     sqlQuery: "select * from c"
 });
-
+// Hello
 app.http('getItems', {
     methods: ['GET'],
     authLevel: 'anonymous',
